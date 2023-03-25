@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+# [/]: home
 def index(request):
-    return HttpResponse('Charts reporting for duty!')
+    return HttpResponse('Analyze reporting for duty!')
