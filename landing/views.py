@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Charts reporting for duty!')
+    return HttpResponse('Welcome to SAFE. <a href="charts">Charts</a> <a href="quiz">Quiz</a>')
