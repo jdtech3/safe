@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'landing/index.css' %}" />
+{% endblock %}
+
+{% block title %}SAFE | Home{% endblock %}
+
+{% block content %}
+
+    <div class="row h-100">
+        <div class="col-sm-12 mx-auto my-auto text-center">
+            <h1>Welcome to SAFE.</h1>
+            <p>The <b>Student-centered</b> Automated Flexible Evaluator</p>
+            
+            <a href="evaluate/" class="btn btn-outline-dark btn-lg m-3">Student: Evaluate</a>
+            <br>
+            <a href="analyze/" class="btn btn-outline-dark btn-lg m-3">Instructor: Analyze</a>
+        </div>
+    </div>
+
+{% endblock %}
