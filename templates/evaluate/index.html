@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'evaluate/index.css' %}" />
+{% endblock %}
+
+{% block title %}SAFE | Evaluate{% endblock %}
+
+{% block content %}
+
+    <div class="row h-100">
+        <div class="col-sm-12 mx-auto my-auto text-center">
+            <h1>Welcome {{ name }}.</h1>
+            <p>You have <span class="fst-italic">1</span> pending safety quiz.</p>
+
+            <br>
+            <br>
+            
+            <a href="#" class="btn btn-outline-success m-1 disabled">CHE204H1 Safety Quiz [complete]</a>
+            <br>
+            <a href="{% url 'evaluate-quiz' %}" class="btn btn-outline-dark m-1">BME205H1 Safety Quiz</a>
+            <br>
+            <a href="#" class="btn btn-outline-dark m-1 disabled">CHE205H1 Safety Quiz [not yet open]</a>
+        </div>
+    </div>
+
+{% endblock %}

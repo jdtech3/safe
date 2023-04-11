@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'evaluate/thanks.css' %}" />
+{% endblock %}
+
+{% block title %}SAFE | Evaluate > Thanks{% endblock %}
+
+{% block content %}
+
+    <div class="row h-100">
+        <div class="col-sm-12 mx-auto my-auto text-center">
+            <h1>Quiz submitted!</h1>
+            <p>Your quiz will be graded soon.</p>
+            
+            <a href="{% url 'evaluate-home' %}" class="btn btn-outline-dark btn-lg m-3">Back to Dashboard</a>
+        </div>
+    </div>
+
+{% endblock %}

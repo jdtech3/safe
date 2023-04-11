@@ -15,9 +15,9 @@
             <h1>Welcome to SAFE.</h1>
             <p>The <b>Student-centered</b> Automated Flexible Evaluator</p>
             
-            <a href="evaluate/" class="btn btn-outline-dark btn-lg m-3">Student: Evaluate</a>
+            <a href="{% url 'evaluate-home' %}" class="btn btn-outline-dark btn-lg m-3">Student: Evaluate</a>
             <br>
-            <a href="analyze/" class="btn btn-outline-dark btn-lg m-3">Instructor: Analyze</a>
+            <a href="{% url 'analyze-home' %}" class="btn btn-outline-dark btn-lg m-3">Instructor: Analyze</a>
         </div>
     </div>
 

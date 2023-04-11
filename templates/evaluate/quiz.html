@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'landing/quiz.css' %}" />
+{% endblock %}
+
+{% block title %}SAFE | Evaluate > Quiz{% endblock %}
+
+{% block content %}
+
+    <div class="p-5 mt-5 shadow">
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+    </div>
+
+{% endblock %}
