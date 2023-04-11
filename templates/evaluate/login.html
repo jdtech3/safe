@@ -12,7 +12,7 @@
 {% block content %}
 
     <div id="login-form" class="col-lg-7 mx-auto p-5 mt-5 shadow">
-        
+
         <form action="" method="post">{% csrf_token %}
             <!-- Form title -->
             <div class="row">
@@ -58,7 +58,7 @@
 
             <!-- Form navigation -->
             <div class="row">
-                <input class="btn btn-outline-dark mx-auto" type="submit" value="Login"/>
+                <input id="login-btn" class="btn btn-outline-dark mx-auto" type="submit" value="Login"/>
                 <input type="hidden" name="next" value="{{ next }}"/>
             </div>
 

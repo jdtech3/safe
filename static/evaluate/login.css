@@ -3,3 +3,7 @@
 .input-group-text {
     font-family: 'Inconsolata', 'Consolas', monospace;
 }
+
+#login-btn {
+    width: 50%;
+}

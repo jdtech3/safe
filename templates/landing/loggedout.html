@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <meta http-equiv="refresh" content="3; url={% url 'landing-home' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'landing/index.css' %}" />
+{% endblock %}
+
+{% block title %}SAFE | Logged Out{% endblock %}
+
+{% block content %}
+
+    <div class="row h-100">
+        <div class="col-sm-12 mx-auto my-auto text-center">
+            <h1>Logged out.</h1>
+            <p>Redirecting in 3 seconds...</p>
+            
+            <a href="{% url 'landing-home' %}" class="btn btn-outline-dark m-3">Home</a>
+            <a href="{% url 'evaluate-login' %}" class="btn btn-outline-dark m-3">Login</a>
+        </div>
+    </div>
+
+{% endblock %}
