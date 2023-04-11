@@ -1,3 +1,5 @@
 Django
 seaborn[stats]
 python-decouple
+django-crispy-forms
+crispy-bootstrap5
