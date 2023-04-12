@@ -4,7 +4,7 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" type="text/css" href="{% static 'evaluate/login.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
 {% endblock %}
 
 {% block title %}SAFE | {{ module|title }} > Login{% endblock %}
@@ -38,7 +38,7 @@
             {% if next and user.is_authenticated %}
                 <div class="col-md-11 mx-auto">
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>You're not a {{ group }}!</strong> Please log in with a valid {{ group }} account. <a href="{% url 'evaluate-logout' %}">Logout</a>.
+                        <strong>You're not a {{ group }}!</strong> Please log in with a {{ group }} account. <a href="{% url module|add:'-logout' %}">Logout</a>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 </div>
