@@ -1,6 +1,7 @@
 # --- CUSTOM ---
 
 .env
+.vscode
 
 # --- GITHUB PROVIDED ---
 
