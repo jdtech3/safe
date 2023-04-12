@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'evaluate/login.css' %}" />
 {% endblock %}
 
-{% block title %}SAFE | Evaluate > Login{% endblock %}
+{% block title %}SAFE | {{ module|title }} > Login{% endblock %}
 
 {% block content %}
 
@@ -17,9 +17,9 @@
             <!-- Form title -->
             <div class="row">
                 <div class="col mx-auto text-center">
-                    <h2>Student Login</h2>
+                    <h2>{{ group|title }} Login</h2>
                     <p class="font-weight-bold text-dark">
-                        Enter your login details here to login to the Evaluate interface.
+                        Enter your login details here to login to the {{ module|title }} interface.
                     </p>
                 </div>
             </div>
@@ -31,6 +31,14 @@
                 <div class="col-md-11 mx-auto">
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong>Incorrect username and/or password!</strong> Try again.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            {% endif %}
+            {% if next and user.is_authenticated %}
+                <div class="col-md-11 mx-auto">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>You're not a {{ group }}!</strong> Please log in with a valid {{ group }} account. <a href="{% url 'evaluate-logout' %}">Logout</a>.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 </div>
