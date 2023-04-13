@@ -120,3 +120,6 @@ FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 # Crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+# CSRF
+CSRF_TRUSTED_ORIGINS = [config('CSRF_TRUSTED_ORIGIN')]
