@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import user_passes_test
+from django.views.decorators.http import require_GET
 
 from utils import charts
 
@@ -12,34 +13,22 @@ def index(request):
 
     return render(request, 'analyze/index.html')
 
-# [/demo-courses-vs-marks-plot]: demo plot 1
+# [/demo-plot]: demo plots
 @user_passes_test(lambda user: user.groups.filter(name='instructors').exists(), login_url=reverse_lazy('analyze-login'))
-def get_demo_courses_vs_marks_plot(request):
-    f = charts.demo_courses_vs_marks()
-    img = f.getvalue()
-
-    return HttpResponse(img, content_type='image/png')
-
-# [/demo-question-categories-vs-marks-plot]: demo plot 2
-@user_passes_test(lambda user: user.groups.filter(name='instructors').exists(), login_url=reverse_lazy('analyze-login'))
-def get_demo_question_categories_vs_marks_plot(request):
-    f = charts.demo_question_categories_vs_marks()
-    img = f.getvalue()
-
-    return HttpResponse(img, content_type='image/png')
-
-# [/demo-time-taken-vs-marks-plot]: demo plot 3
-@user_passes_test(lambda user: user.groups.filter(name='instructors').exists(), login_url=reverse_lazy('analyze-login'))
-def get_demo_time_taken_vs_marks_plot(request):
-    f = charts.demo_time_taken_vs_marks()
-    img = f.getvalue()
-
-    return HttpResponse(img, content_type='image/png')
-
-# [/demo-incidents-vs-marks-plot]: demo plot 4
-@user_passes_test(lambda user: user.groups.filter(name='instructors').exists(), login_url=reverse_lazy('analyze-login'))
-def get_demo_incidents_vs_marks_plot(request):
-    f = charts.demo_incidents_vs_marks()
-    img = f.getvalue()
-
-    return HttpResponse(img, content_type='image/png')
+@require_GET
+def get_demo_plot(request, plot):
+    f = None
+    if plot == 'courses-vs-marks':    
+        f = charts.demo_courses_vs_marks()
+    elif plot == 'question-categories-vs-marks':
+        f = charts.demo_question_categories_vs_marks()
+    elif plot == 'time-taken-vs-marks':
+        f = charts.demo_time_taken_vs_marks()
+    elif plot == 'incidents-vs-marks':
+        f = charts.demo_incidents_vs_marks()
+    
+    if f is not None:
+        img = f.getvalue()
+        return HttpResponse(img, content_type='image/png')
+    else:
+        return HttpResponseNotFound()
