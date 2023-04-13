@@ -1,2 +1,13 @@
 /* Stylesheet for evaluate/quiz.html */
 
+img {
+    max-width: 70%;
+}
+
+select.picturemcq {
+    width: 25%;
+}
+
+#submit-btn {
+    width: 25%;
+}

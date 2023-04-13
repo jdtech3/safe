@@ -4,21 +4,25 @@
 {% load crispy_forms_tags %}
 
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'landing/quiz.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'evaluate/quiz.css' %}" />
 {% endblock %}
 
 {% block title %}SAFE | Evaluate > Quiz{% endblock %}
 
 {% block content %}
 
-    <div class="p-5 mt-5 shadow">
+    <div class="col-lg-8 mx-auto p-5 mt-5 shadow">
+
+        <h1 class="text-center mb-5">BME205H1 Safety Quiz</h1>
 
         <form action="" method="post">
             {% csrf_token %}
 
             {{ form|crispy }}
 
-            <input type="submit" value="Submit" class="btn btn-primary">
+            <div class="row justify-content-center">
+                <input id="submit-btn" type="submit" value="Submit" class="btn btn-primary mt-5">
+            </div>
         </form>
 
     </div>

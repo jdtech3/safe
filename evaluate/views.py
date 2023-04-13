@@ -19,7 +19,11 @@ def get_safety_quiz(request):
             return HttpResponseRedirect(reverse('evaluate-thanks'))
         
     else:
-        form = SafetyQuizForm()
+        prefill = {
+            'first_name': request.user.first_name,
+            'last_name': request.user.last_name,
+        }
+        form = SafetyQuizForm(initial=prefill)
     
     return render(request, 'evaluate/quiz.html', {'form': form})
 
