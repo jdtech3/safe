@@ -4,7 +4,7 @@ img {
     max-width: 70%;
 }
 
-select.picturemcq {
+select.picturemcq, select.videomcq {
     width: 25%;
 }
 
