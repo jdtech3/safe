@@ -13,16 +13,18 @@ def index(request):
 # [/quiz/]: safety quiz
 @user_passes_test(lambda user: user.groups.filter(name='students').exists(), login_url=reverse_lazy('evaluate-login'))
 def get_safety_quiz(request):
+    # User data
+    prefill = {
+        'first_name': request.user.first_name,
+        'last_name': request.user.last_name,
+    }
+
     if request.method == 'POST':
-        form = SafetyQuizForm(request.POST)
+        form = SafetyQuizForm(request.POST, initial=prefill)
         if form.is_valid():
             return HttpResponseRedirect(reverse('evaluate-thanks'))
         
     else:
-        prefill = {
-            'first_name': request.user.first_name,
-            'last_name': request.user.last_name,
-        }
         form = SafetyQuizForm(initial=prefill)
     
     return render(request, 'evaluate/quiz.html', {'form': form})
