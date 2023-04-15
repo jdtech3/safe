@@ -4,14 +4,21 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import user_passes_test
 from django.views.decorators.http import require_GET
 
+from .forms import AnalyzeForm
 from utils import charts
 
 # [/]: home
 @user_passes_test(lambda user: user.groups.filter(name='instructors').exists(), login_url=reverse_lazy('analyze-login'))
 def index(request):
-    plot = charts.demo_courses_vs_marks()
+    if request.method == 'POST':
+        form = AnalyzeForm(request.POST)
+        if form.is_valid():
+            return render(request, 'analyze/index.html', {'form': form, 'display_graph': True})
+        
+    else:
+        form = AnalyzeForm()
 
-    return render(request, 'analyze/index.html')
+    return render(request, 'analyze/index.html', {'form': form})
 
 # [/demo-plot]: demo plots
 @user_passes_test(lambda user: user.groups.filter(name='instructors').exists(), login_url=reverse_lazy('analyze-login'))

@@ -1,0 +1,18 @@
+/* Stylesheet for analyze/index.html */
+
+img {
+    max-width: 100%;
+}
+
+img.add-border {
+    padding: 1%;
+    border: 1px solid black;
+}
+
+#submit-btn {
+    width: 50%;
+}
+
+#logout-btn {
+    width: 25%;
+}
