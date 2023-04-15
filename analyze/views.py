@@ -13,6 +13,7 @@ def index(request):
     if request.method == 'POST':
         form = AnalyzeForm(request.POST)
         if form.is_valid():
+            # TODO: Implement actual analysis selection
             return render(request, 'analyze/index.html', {'form': form, 'display_graph': True})
         
     else:

@@ -31,4 +31,5 @@ def get_safety_quiz(request):
 
 # [/thanks/]: safety quiz submitted
 def thanks(request):
+    # TODO: Implement actual autograding feedback
     return render(request, 'evaluate/thanks.html')
