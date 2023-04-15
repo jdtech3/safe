@@ -13,7 +13,9 @@
     <div class="row h-100">
         <div class="col-sm-12 mx-auto my-auto text-center">
             <h1>Quiz submitted!</h1>
-            <p>Your quiz will be graded soon.</p>
+
+            <!-- TODO: Implement actual autograding feedback -->
+            <p>You received <span class="fw-bold text-success">4/4</span> on autograded questions. Your official grade will be released soon.</p>
             
             <a href="{% url 'evaluate-home' %}" class="btn btn-outline-dark btn-lg m-3">Back to Dashboard</a>
         </div>
