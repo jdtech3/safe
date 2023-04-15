@@ -4,6 +4,11 @@ img {
     max-width: 70%;
 }
 
+iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
 select.picturemcq, select.videomcq {
     width: 25%;
 }
