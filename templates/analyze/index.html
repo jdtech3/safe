@@ -40,7 +40,53 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <!-- TODO: Implement actual statistics -->
+        {% if display_graph %}
+            <div class="row">
+
+                <div class="row">
+                    <h4 class="text-center mt-5 mb-4">Descriptive Statistics</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-10 mx-auto">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Variable</th>
+                                    <th scope="col">Mean</th>
+                                    <th scope="col">Median</th>
+                                    <th scope="col">Standard deviation</th>
+                                    <th scope="col">Minimum</th>
+                                    <th scope="col">Maximum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">X: <span class="fst-italic">Time taken to complete quiz</span></th>
+                                    <td>43.2</td>
+                                    <td>42.1</td>
+                                    <td>9.8</td>
+                                    <td>22.3</td>
+                                    <td>58.9</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Y: <span class="fst-italic">Quiz scores</span></th>
+                                    <td>72.1</td>
+                                    <td>75.2</td>
+                                    <td>11.0</td>
+                                    <td>54.8</td>
+                                    <td>91.8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        {% endif %}
+
+        <div class="row mt-2">
             <a href="{% url 'analyze-logout' %}" id="logout-btn" class="btn btn-outline-dark btn-lg mt-5 mx-auto">Logout</a>
         </div>
         
