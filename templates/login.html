@@ -66,8 +66,14 @@
 
             <!-- Form navigation -->
             <div class="row">
-                <input id="login-btn" class="btn btn-outline-dark mx-auto" type="submit" value="Login"/>
+                <input class="btn btn-outline-dark mx-auto login-btn" type="submit" value="Login"/>
                 <input type="hidden" name="next" value="{{ next }}"/>
+            </div>
+
+            <!-- UTORid SSO (not implemented for prototype) -->
+            <div class="row">
+                <h5 class="text-center p-2">- or -</h4>
+                <a href="#" class="btn btn-dark mx-auto login-btn">Sign in with UTORid</a>
             </div>
 
         </form>

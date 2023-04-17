@@ -4,6 +4,6 @@
     font-family: 'Inconsolata', 'Consolas', monospace;
 }
 
-#login-btn {
+.login-btn {
     width: 50%;
 }
